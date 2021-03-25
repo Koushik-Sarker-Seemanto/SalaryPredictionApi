@@ -1,1 +1,1 @@
-web: gunicorn SalaryPredicaitonApi.wsgi --log-file
+web: gunicorn SalaryPredicaitonApi.wsgi --log-file -
