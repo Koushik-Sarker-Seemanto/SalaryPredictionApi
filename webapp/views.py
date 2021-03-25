@@ -37,3 +37,9 @@ def predict(request):
     except:
         response = {"result": None, "error": "Internal Server Error"}
         return Response(response, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+@api_view(['GET'])
+def health(request):
+    print('started!!!!!!!!!!!!!!!!')
+    return Response("healthy", status=status.HTTP_200_OK)
