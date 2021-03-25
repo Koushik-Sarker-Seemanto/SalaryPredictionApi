@@ -10,7 +10,7 @@ def predict_method(data_list):
     try:
         settings_dir = os.path.dirname(__file__)
         root = os.path.abspath(os.path.dirname(settings_dir))
-        pretrained_model_path = os.path.join(root, 'webapp\\training\\finalized_model.sav')
+        pretrained_model_path = os.path.join(root, 'webapp/training/finalized_model.sav')
 
         print('################## Pretrained Model Path ##################')
         print(pretrained_model_path)
