@@ -4,11 +4,16 @@ from sklearn.linear_model import LinearRegression
 import pickle
 from sklearn.metrics import r2_score
 
+import os
+settings_dir = os.path.dirname(__file__)
+root = os.path.abspath(os.path.dirname(settings_dir))
+read_path = os.path.join(root, 'dataset\\dataset_salary.csv')
+write_path = os.path.join(root, 'training\\finalized_model.sav')
 
-def MLModel():
+
+def train_ml_model():
     print('Reading Csv')
-    data = pd.read_csv(
-        'C:\\Users\\shohoz\\Desktop\\ProgrammingHub\\SalaryPredicaitonApi\\webapp\\dataset\\dataset_salary.csv')
+    data = pd.read_csv(read_path)
     data = data.dropna()
     ind_feat = data.iloc[:, :-1]
     dep_feat = data.iloc[:, -1]
@@ -23,10 +28,8 @@ def MLModel():
     print('r2_score: ', score)
 
     # save the model to disk
-    filename = 'C:\\Users\\shohoz\\Desktop\\ProgrammingHub\\SalaryPredicaitonApi\\webapp\\training\\finalized_model.sav'
-    pickle.dump(regression, open(filename, 'wb'))
+    pickle.dump(regression, open(write_path, 'wb'))
     print('Training Complete!!!')
 
 
-
-MLModel()
+train_ml_model()

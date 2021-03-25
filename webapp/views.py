@@ -7,8 +7,11 @@ import pickle
 
 def predict_method(data_list):
     try:
-        filename = 'C:\\Users\\shohoz\\Desktop\\ProgrammingHub\\SalaryPredicaitonApi\\webapp\\training\\finalized_model.sav'
-        loaded_model = pickle.load(open(filename, 'rb'))
+        import os
+        settings_dir = os.path.dirname(__file__)
+        root = os.path.abspath(os.path.dirname(settings_dir))
+        pretrained_model = os.path.join(root, 'webapp\\training\\finalized_model.sav')
+        loaded_model = pickle.load(open(pretrained_model, 'rb'))
         arr = np.array([data_list])
         predicted_salary = loaded_model.predict(arr)
         return predicted_salary[0]
