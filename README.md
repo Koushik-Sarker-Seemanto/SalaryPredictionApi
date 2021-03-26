@@ -1,15 +1,16 @@
 # SalaryPredictionApi
 
-#Please Contribute in Dataset
+# Please Contribute in Dataset
 - https://forms.gle/7LEMbsZ3VHbsmeRZ8
 
-#Heroku Link
+# Heroku Link
 - https://intense-wave-80368.herokuapp.com/
-#Health Check Api
+# Health Check Api
 - https://intense-wave-80368.herokuapp.com/api/health/
 # Salary Prediction Api
-- https://intense-wave-80368.herokuapp.com/api/predict/
-- RequestBody:
+https://intense-wave-80368.herokuapp.com/api/predict/
+
+RequestBody:
 ```json
 {
     "java": 7,
